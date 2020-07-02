@@ -27,7 +27,7 @@ const QUESTIONS = [
     {
         q: 'What are russian astronauts called?',
         a: 'cosmonauts',
-        options: ['space creatures', 'pilots', 'cosmonauts', 'aeronauts']
+        options: ['starmen', 'pilots', 'cosmonauts', 'aeronauts']
     }
 
 ]
