@@ -123,26 +123,6 @@ function feedBack(isCorrect) {
     answeredQuestion = true;
 }
 
-
-function renderEndScreen() {
-    toggleScore();
-    $('#question-text').html(`You got ${currentScore} correct and ${(currentQuestion + 1) - currentScore} incorrect!`);
-    $('#question-options').html("");
-    updateButtonText('Restart Quiz');
-    finished = true;
-}
-
-
-function renderStats() {
-    $('#stats').html(`<li>Question ${currentQuestion + 1} of ${QUESTIONS.length}</li>
-    <li>Score: ${currentScore} correct, ${currentQuestion - currentScore} incorrect</li>`)
-}
-
-function renderCurrentOptions() {
-    const opts = QUESTIONS[currentQuestion].options.map((item) => createOptionsElement(item));
-    $('#question-options').html(opts);
-}
-
 function renderCurrentQuestion() {
     if (currentQuestion >= 0) {
         answeredQuestion = false;
@@ -154,6 +134,23 @@ function renderCurrentQuestion() {
     }
 }
 
+function renderStats() {
+    $('#stats').html(`<li>Question ${currentQuestion + 1} of ${QUESTIONS.length}</li>
+    <li>Score: ${currentScore} correct, ${currentQuestion - currentScore} incorrect</li>`)
+}
+
+function renderCurrentOptions() {
+    const opts = QUESTIONS[currentQuestion].options.map((item) => createOptionsElement(item));
+    $('#question-options').html(opts);
+}
+
+function renderEndScreen() {
+    toggleScore();
+    $('#question-text').html(`You got ${currentScore} correct and ${(currentQuestion + 1) - currentScore} incorrect!`);
+    $('#question-options').html("");
+    updateButtonText('Restart Quiz');
+    finished = true;
+}
 
 
 $(renderStartScreen);
