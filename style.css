@@ -4,16 +4,29 @@
 
 html, body {
     margin: 0 auto;
-    font-family: 'Space Mono', monospace;
-    color: white;
+    font-family: 'Roboto Mono', monospace;
+    color: #ffecdb;
     background-color: #202020;
     height: 100%;
 }
 
 main {
     height: 100%;
-    padding: 20px;
     margin: auto;
+    background: url('earth.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+form {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+section {
 }
 
 ul, li {
@@ -21,10 +34,22 @@ ul, li {
     list-style: none;
 }
 
+h1 {
+    text-align: center;
+}
+
 textarea, input[type="text"], input[type="email"], input[type="submit"], button {
     -webkit-appearance: none;
     border-radius: 0;
     background: none;
+    
+}
+
+input[type="radio"] {
+    color: white;
+    border-radius: 0;
+    border: none;
+    border: 1px solid white;
 }
 
 input[type="submit"] {
@@ -33,5 +58,60 @@ input[type="submit"] {
     color: white;
     padding: 20px;
     border: none;
+    width: 100%;
     border-top: 1px solid white;
+    /* margin-left: -20px; */
+}
+
+.js {
+    text-align: center;
+    margin-top: 10px;
+    display: block;
+    font-size: 18px;
+}
+
+.good {
+    color: green;
+}
+
+.bad {
+    color: red;
+}
+
+.hidden {
+    display: none;
+}
+
+#stats {
+    margin-top: 0;
+    padding-top: 40px;
+    padding-left: 0;
+}
+
+#question-options {
+    font-size: 24px;
+}
+
+@media all and (min-width: 320px) {
+
+}
+
+@media all and (min-width: 768px) {
+    main {
+        max-width: 768px;
+        border-left: 1px solid white;
+        border-right: 1px solid white;
+    }
+    input[type="submit"] {
+        bottom: 0;
+        position: absolute;
+        color: white;
+        padding: 20px;
+        border: none;
+        border-top: 1px solid white;
+        max-width: 768px;
+        /* width: 100%; */
+    }
+    
+    
 }

@@ -1,24 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <link rel="stylesheet" href="style.css">
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" type="text/css">
-      <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <main>
+        <header>
+            <ul id="stats" class="hidden"></ul>
+          </header>
       <section>
-        <!-- <ul>
-          <li>Question # of #</li>
-          <li>Score: #</li>
-        </ul> -->
+        
+        <form id="quizForm" action="/" method="GET">
+          <h1 id="question-text"></h1>
+          <div id="question-options"></div>
+          
+          <br />
+          <span id="feedBack" class=""></span>
+          <input id="go" type="submit" value="" />
+        </form>
       </section>
-      <section>
-        <form action="question1.html" method="GET">
-          <h1>How much do you know about Space?</h1>
-          <input type="submit" value="Start Quiz" />
-          </form>
-      </section>
+      
     </main>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
