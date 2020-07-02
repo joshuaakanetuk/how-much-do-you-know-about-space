@@ -48,7 +48,7 @@ function createOptionsElement(item) {
 }
 
 // Game logic
-$('#go').on('click', function (e) {
+$('form').on('submit', function (e) {
     e.preventDefault();
     buttonHandler();
 });
@@ -64,6 +64,7 @@ function renderStartScreen() {
     $('#feedBack').text('');
 }
 
+// handles the button clicks
 function buttonHandler() {
     // if this is the start quiz screen
     // move to first questions
@@ -80,7 +81,7 @@ function buttonHandler() {
         optionChecker();
     }
 }
-
+// validates user answer
 function optionChecker() {
     if (!($('input[name=option]:checked', 'form').val())) {
         $('#feedBack').text('Pick a option to answer the quiz.');
@@ -122,7 +123,7 @@ function feedBack(isCorrect) {
     }
     answeredQuestion = true;
 }
-
+// render question on html
 function renderCurrentQuestion() {
     if (currentQuestion >= 0) {
         answeredQuestion = false;
@@ -143,7 +144,7 @@ function renderCurrentOptions() {
     const opts = QUESTIONS[currentQuestion].options.map((item) => createOptionsElement(item));
     $('#question-options').html(opts);
 }
-
+// render end screen with score on html
 function renderEndScreen() {
     toggleScore();
     $('#question-text').html(`You got ${currentScore} correct and ${(currentQuestion + 1) - currentScore} incorrect!`);
